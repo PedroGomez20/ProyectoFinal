@@ -55,15 +55,32 @@
                 </tr>
             </thead>
             <tbody>
-                <td>Id</td>
-                <td>Nombre</td>
-                <td>Contenido</td>
-                <td>Categoria</td>
-                <td>Precio</td>
-                <td>Stock</td>
-                <td>
-
-                </td>
+                <% resultados.forEach((nombre)=> { %>
+                    <tr>
+                        <td>
+                            <%= nombre.Id %>
+                        </td>
+                        <td>
+                            <%= nombre.Nombre %>
+                        </td>
+                        <td>
+                            <%= nombre.Contenido %>
+                        </td>
+                        <td>
+                            <%= nombre.Categoria %>
+                        </td>
+                        <td>
+                            <%= nombre.Precio %>
+                        </td>
+                        <td>
+                            <%= nombre.Stock %>
+                        </td>
+                        <td>
+                            <a href="/edit" class="btn btn-outline-info">Editar</a>
+                            <a href="/delete" class="btn btn-outline-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                    <% }) %>
             </tbody>
         </table>
 
