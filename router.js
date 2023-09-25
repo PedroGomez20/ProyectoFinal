@@ -19,6 +19,18 @@ router.get('/create', (req, res) => {
     res.render('create');
 })
 
+//RUTA PARA EDITAR REGISTROS
+router.get('/edit/:Id', (req, res) => {
+    const Id = req.params.Id;
+    conexion.query('SELECT * FROM productos WHERE Id = ?', [Id], (error, resultados) => {
+        if (error) {
+            throw error;
+        } else {
+            res.render('edit', { nombre: resultados[0] });
+        }
+    })
+})
+
 const crud = require('./controllers/crud');
 router.post('/save', crud.save);
 

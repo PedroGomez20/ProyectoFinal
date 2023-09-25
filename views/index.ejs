@@ -42,7 +42,11 @@
     </nav>
 
     <div class="container">
-        <a href="/create" class="btn btn-outline-primary mt-4">Agregar</a>
+        <div style="display: inline-block;">
+            <a style="display: flex; justify-content: flex-start; align-items: center;" href="/create"
+                class="btn btn-outline-primary mt-4"><i class="bx bx-add-to-queue bx-rotate-90 bx-md"></i>Agregar</a>
+        </div>
+
         <table class="table table-bordered table-striped text-center mt-4">
             <thead>
                 <tr class="bg-primary text-white">
@@ -77,7 +81,7 @@
                             <%= nombre.Stock %>
                         </td>
                         <td>
-                            <a href="/edit" class="btn btn-outline-info">Editar</a>
+                            <a href="/edit/<%= nombre.Id %>" class="btn btn-outline-info">Editar</a>
                             <a href="/delete" class="btn btn-outline-danger">Eliminar</a>
                         </td>
                     </tr>
