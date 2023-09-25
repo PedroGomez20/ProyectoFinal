@@ -31,6 +31,18 @@ router.get('/edit/:Id', (req, res) => {
     });
 });
 
+//RUTA PARA ELIMINAR REGISTROS
+router.get('/delete/:Id', (req, res) => {
+    const Id = req.params.Id;
+    conexion.query('DELETE FROM productos WHERE Id = ?', [Id], (error, resultados) => {
+        if (error) {
+            throw error;
+        } else {
+            res.redirect('/');
+        }
+    })
+});
+
 const crud = require('./controllers/crud');
 router.post('/save', crud.save);
 router.post('/update', crud.update);
