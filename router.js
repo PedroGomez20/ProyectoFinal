@@ -26,10 +26,10 @@ router.get('/edit/:Id', (req, res) => {
         if (error) {
             throw error;
         } else {
-            res.render('edit', { nombre: resultados[0] });
+            res.render('edit.ejs', { nombre: resultados[0] });
         }
-    })
-})
+    });
+});
 
 const crud = require('./controllers/crud');
 router.post('/save', crud.save);
