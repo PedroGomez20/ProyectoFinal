@@ -6,7 +6,12 @@ exports.save = (req, res) => {
     const categoria = req.body.categoria;
     const precio = req.body.precio;
     const stock = req.body.stock;
-    console.log(nombre + " " + contenido);
-    console.log(categoria + " " + precio);
-    console.log(stock);
+    conexion.query('INSERT INTO productos SET ?',
+        { nombre: nombre, contenido: contenido, categoria: categoria, precio: precio, stock: stock }, (error, resultados) => {
+            if (error) {
+                console.log(error);
+            } else {
+                res.redirect('/');
+            }
+        })
 }
