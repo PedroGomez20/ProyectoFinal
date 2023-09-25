@@ -45,7 +45,7 @@
             <div class="card border-secondary">
                 <div class="card-header">Editar producto</div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="/update" method="POST">
                         <input id="id" name="id" value="<%= nombre.Id %>" hidden>
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre producto</label>
@@ -64,18 +64,24 @@
                             <label for="categoria" class="form-label">Categoria</label>
                             <select id="categoria" name="categoria" class="form-select"
                                 aria-label="Default select example" tabindex="3">
-                                <option <%=nombre.Categoria=='Alimentos y bebidas' ? "selected" : '' %> value="Alimentos
-                                    y bebidas" selected>Alimentos y bebidas</option>
-                                <option <%=nombre.Categoria=='Higiene' ? "selected" : '' %> value="Higiene">Higiene
+                                <option <%=nombre.Categoria=='Alimentos y bebidas' ? "selected" : '' %>
+                                    value="Alimentos y bebidas" selected>Alimentos y bebidas
+                                </option>
+                                <option <%=nombre.Categoria=='Higiene' ? "selected" : '' %>
+                                    value="Higiene">Higiene
                                 </option>
                                 <option <%=nombre.Categoria=='Electronica' ? "selected" : '' %>
-                                    value="Electronica">Electronica</option>
-                                <option <%=nombre.Categoria=='Ropa y moda' ? "selected" : '' %> value="Ropa y moda">Ropa
-                                    y moda</option>
-                                <option <%=nombre.Categoria=='Hogar y jardin' ? "selected" : '' %> value="Hogar y
-                                    jardin">Hogar y jardin</option>
+                                    value="Electronica">Electronica
+                                </option>
+                                <option <%=nombre.Categoria=='Ropa y moda' ? "selected" : '' %>
+                                    value="Ropa y moda">Ropa y moda
+                                </option>
+                                <option <%=nombre.Categoria=='Hogar y jardin' ? "selected" : '' %>
+                                    value="Hogar y jardin">Hogar y jardin
+                                </option>
                                 <option <%=nombre.Categoria=='Automotriz' ? "selected" : '' %>
-                                    value="Automotriz">Automotriz</option>
+                                    value="Automotriz">Automotriz
+                                </option>
                             </select>
                         </div>
                         <div class="mb-3">

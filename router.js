@@ -33,5 +33,6 @@ router.get('/edit/:Id', (req, res) => {
 
 const crud = require('./controllers/crud');
 router.post('/save', crud.save);
+router.post('/update', crud.update);
 
 module.exports = router;
